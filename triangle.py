@@ -36,17 +36,20 @@ def traverse_triangle_binary(root):
             return root.right.data + traverse_triangle(root.right)
     return root.data
 '''
+
 '''
---------------------------------------------------------
-See ReadMe for changes I made to ensure this is production ready
---------------------------------------------------------
+-------------------------------------------
+See ReadMe for updates on changes made to help this algorithm become production ready
+-------------------------------------------
 '''
 
 # second approach, using dynamic programming
 def setupMatrix():
+    # parametrize file name
     # account for incorrect file name
+    name_of_file = input("Please enter the name of the triangle text file (with extension): ")
     try:
-        input_text = open("triangle.txt", "r")
+        input_text = open(name_of_file, "r")
     except FileNotFoundError:
         print("Provided file was not found")
         return 0
